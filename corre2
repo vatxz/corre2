@@ -1,0 +1,20 @@
+import subprocess
+
+# Lista de comandos para ejecutar diferentes programas
+commands = [
+    "python programa1.py",
+    "python programa2.py",
+    "python programa3.py"
+]
+
+# Lista para almacenar los procesos
+processes = []
+
+# Ejecutar cada comando en un proceso separado
+for command in commands:
+    process = subprocess.Popen(command, shell=True)
+    processes.append(process)
+
+# Esperar a que todos los procesos terminen
+for process in processes:
+    process.wait()
